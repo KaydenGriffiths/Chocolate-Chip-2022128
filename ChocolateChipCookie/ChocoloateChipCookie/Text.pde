@@ -1,4 +1,3 @@
-String spaceBar = "Press the SPACE BAR to Continue";
 PFont arial;
 //
 void textSetup() {
@@ -8,12 +7,13 @@ void textSetup() {
 }//End textSetup
 //
 void spaceBarText() {
-  rect( startX, startY, startWidth, startHeight );
-  fill(purple);
-  textAlign(CENTER, CENTER);
-  //
-  int size = 25; // size = 19, when, size(600,400);
-  textFont(arial, size );
+  //rect( startX, startY, startWidth, startHeight );
+  fill(purple); //Ink, hexidecimal copied from Color Selector
+  textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
+  //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
+  int size = 19; //Change the number until it fits
+  textFont(arial , size); 
+  String spaceBar = "Press the SPACE BAR to continue";
   text( spaceBar, startX, startY, startWidth, startHeight );
   fill(white);
 }//End spaceBarText
