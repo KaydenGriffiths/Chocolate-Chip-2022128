@@ -18,6 +18,7 @@ void setup() {
   display();
   population();
   textSetup();
+  imagePopulation();
 }//End setup
 //
 void draw() {
