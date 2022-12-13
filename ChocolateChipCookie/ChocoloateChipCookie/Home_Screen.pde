@@ -25,9 +25,29 @@ void backgroundWhiteScreen() {
 }//End backgroundWhiteScreen
 //
 void backgroundImage() {
-  backgroundWhiteScreen();
-  //tint( dayModeTint, dayModeOpacity); //Day Mode, see ternary operator
-  tint(tintRed, tintGreen, tintBlue, tintNightModeOpacity); //Night Mode, see ternary operator
+  //backgroundWhiteScreen();
+  tint( dayModeTint, dayModeOpacity); //Day Mode, see ternary operator
+  //tint(tintRed, tintGreen, tintBlue, tintNightModeOpacity); //Night Mode, see ternary operator
   image( backGroundImage, backgroundX, backgroundY, backgroundWidth, backgroundHeight );
 }//end backgroundImage
+//
+void gridBackground() {
+  strokeWeight(5);
+  stroke(red);
+  line( appWidth/3, appHeight*0, appWidth/3, appHeight);
+  //
+  strokeWeight(5);
+  stroke(red);
+  line( appWidth* 2/3, appHeight*0, appWidth* 2/3, appHeight);
+  //
+  strokeWeight(5);
+  stroke(green);
+  line( appWidth*0, appHeight*2/3, appWidth, appHeight*2/3);
+  //
+  strokeWeight(5);
+  stroke(green);
+  line( appWidth*0, appHeight/3, appWidth, appHeight/3);
+  //
+  //square(500,100,500);
+}//End gridBackground
 //End Home Screen Subprogram
