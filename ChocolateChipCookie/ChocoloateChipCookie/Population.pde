@@ -5,6 +5,11 @@ void population() {
   startX= centerX - startWidth/2;
   startY= centerY - startHeight/2;
   //
+  quitWidth= appWidth/4 ;
+  quitHeight= appHeight/10 ;
+  quitX= centerX - quitWidth/2;
+  quitY= centerY - 5*quitHeight;
+  //
   backgroundX= appWidth * 0;
   backgroundY= appHeight * 0;
   backgroundWidth= appWidth;

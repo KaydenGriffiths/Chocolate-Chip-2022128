@@ -1,18 +1,23 @@
 int backgroundX, backgroundY, backgroundWidth, backgroundHeight;
+float quitX, quitY, quitWidth, quitHeight;
 int dayModeTint=255, dayModeOpacity=50;
 int tintRed=64, tintGreen=64, tintBlue=40, tintNightModeOpacity=85;
 //
+/* Home Screen Expectations 
+ - Background image using tint()                                 -DONE
+ - 9 evenly spaced rectangles, Assignment #3                     -DONE
+ - Quit Button and Reset BUtton (Splash Screen Start Button)
+ - In each: image, text, 2D shape, Button
+ - Narrative trhough the 9 rectangles
+ - See Case Study
+ - Note: must have one image with aspect ratio < -  you suck at this 
+ */
 void homeScreen() {
-  println("Arrived at Home Screen" ); //Testing for Splash Screen Start Button
-  /* Home Screen Expectations 
-   - Background image using tint()
-   - 9 evenly spaced rectangles, Assignment #3
-   - Quit Button and Reset BUtton (Splash Screen Start Button)
-   - In each: image, text, 2D shape, Button
-   - Narrative trhough the 9 rectangles
-   - See Case Study
-   - Note: must have one image with aspect ratio < - - - - you suck at this 
-   */
+  //println("Arrived at Home Screen" ); //Testing for Splash Screen Start Button
+  if ( mouseQuitButton Hoverover
+  } else {
+  }
+  quitButtonText();
   //
 }//End homeScreen
 //
@@ -26,8 +31,8 @@ void backgroundWhiteScreen() {
 //
 void backgroundImage() {
   //backgroundWhiteScreen();
-  tint( dayModeTint, dayModeOpacity); //Day Mode, see ternary operator
-  //tint(tintRed, tintGreen, tintBlue, tintNightModeOpacity); //Night Mode, see ternary operator
+  if ( nightMode==false )tint( dayModeTint, dayModeOpacity); //Day Mode, see ternary operator
+  if ( nightMode==true ) tint(tintRed, tintGreen, tintBlue, tintNightModeOpacity); //Night Mode, see ternary operator
   image( backGroundImage, backgroundX, backgroundY, backgroundWidth, backgroundHeight );
 }//end backgroundImage
 //

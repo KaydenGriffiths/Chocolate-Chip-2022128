@@ -2,7 +2,7 @@ PFont arial;
 //
 void textSetup() {
   //Assignment #2: Minimum Expectation = one font
-  String [] fontList = PFont.list();
+  //String [] fontList = PFont.list();
   arial = createFont ("Arial", 55);
 }//End textSetup
 //
@@ -12,10 +12,21 @@ void spaceBarText() {
   textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
   //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
   int size = 39; //Change the number until it fits
-  textFont(arial , size); 
-  String spaceBar = "Press the SPACE BAR to continue";
+  textFont(arial, size); 
+  String spaceBar="Press the SPACE BAR to continue"; 
   text( spaceBar, startX, startY, startWidth, startHeight );
-  fill(white);
+  noFill(); //Reset
 }//End spaceBarText
 //
+void quitButtonText() {
+  rect( quitX, quitY, quitWidth, quitHeight );
+  fill(red); //Ink, hexidecimal copied from Color Selector
+  textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
+  //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
+  int size = 80; //Change the number until it fits
+  textFont(arial, size); 
+  String quitButton="QUIT"; 
+  text( quitButton, quitX, quitY, quitWidth, quitHeight );
+  noFill(); //Reset
+}//End spaceBarText
 //End Text Subprogram
