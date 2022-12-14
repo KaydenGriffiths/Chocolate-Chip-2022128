@@ -14,10 +14,15 @@ int tintRed=64, tintGreen=64, tintBlue=40, tintNightModeOpacity=85;
  */
 void homeScreen() {
   //println("Arrived at Home Screen" ); //Testing for Splash Screen Start Button
-  if ( mouseQuitButton Hoverover
+  if ( mouseX>=quitX && mouseX<=quitX+quitWidth && mouseY>=quitY && mouseY<=quitY+quitHeight ) { //QuitButton Hoverover
+  //Cookie, aspect ratio
+  fill(red);
+  rect( quitX, quitY, quitWidth, quitHeight );
+  noFill(); 
   } else {
+    quitButtonText();
+    fill(white);
   }
-  quitButtonText();
   //
 }//End homeScreen
 //

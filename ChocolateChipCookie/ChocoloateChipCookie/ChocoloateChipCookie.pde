@@ -24,7 +24,10 @@ void setup() {
 void draw() {
   //Assginment #2: OS Level Mouse Click and Splash Screen
   if ( OS_on==true && splashScreenStart==false) splashScreen(); 
-  if ( splashScreenStart==true ) homeScreen();
+  if ( splashScreenStart==true ) { 
+    homeScreen(); 
+    homeScreenStart=true;
+  }
   //
 }//End draw
 //
@@ -60,6 +63,9 @@ void keyPressed() {
 void mousePressed() {
   //OS Level Mouse Click
   if ( OS_on==false ) OS_on=true;//End OS Level Mouse Click
+  if ( homeScreenStart==true && mouseX>=quitX && mouseX<=quitX+quitWidth && mouseY>=quitY && mouseY<=quitY+quitHeight) {
+    exit();
+  }
   //cursor();
 }//End mousePressed
 //
