@@ -1,4 +1,5 @@
 PFont arial;
+color darkRed=#DD0000;
 //
 void textSetup() {
   //Assignment #2: Minimum Expectation = one font
@@ -19,14 +20,17 @@ void spaceBarText() {
 }//End spaceBarText
 //
 void quitButtonText() {
+  strokeWeight(1);
+  stroke(darkRed);
   rect( quitX, quitY, quitWidth, quitHeight );
-  fill(red); //Ink, hexidecimal copied from Color Selector
-  textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
-  //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
+  //
+  fill(red); 
+  textAlign(CENTER, CENTER); 
   int size = 80; //Change the number until it fits
   textFont(arial, size); 
   String quitButton="QUIT"; 
   text( quitButton, quitX, quitY, quitWidth, quitHeight );
-  noFill(); //Reset
+  noFill();
 }//End spaceBarText
+//
 //End Text Subprogram

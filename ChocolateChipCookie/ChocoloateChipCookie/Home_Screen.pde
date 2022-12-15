@@ -1,5 +1,7 @@
 int backgroundX, backgroundY, backgroundWidth, backgroundHeight;
 float quitX, quitY, quitWidth, quitHeight;
+float quitButtonImageX, quitButtonImageY, quitButtonImageWidth, quitButtonImageHeight;
+float quitButtonImageRectX, quitButtonImageRectY, quitButtonImageRectWidth, quitButtonImageRectHeight;
 int dayModeTint=255, dayModeOpacity=50;
 int tintRed=64, tintGreen=64, tintBlue=40, tintNightModeOpacity=85;
 //
@@ -12,20 +14,6 @@ int tintRed=64, tintGreen=64, tintBlue=40, tintNightModeOpacity=85;
  - See Case Study
  - Note: must have one image with aspect ratio < -  you suck at this 
  */
-void homeScreen() {
-  //println("Arrived at Home Screen" ); //Testing for Splash Screen Start Button
-  if ( mouseX>=quitX && mouseX<=quitX+quitWidth && mouseY>=quitY && mouseY<=quitY+quitHeight ) { //QuitButton Hoverover
-  //Cookie, aspect ratio
-  fill(red);
-  rect( quitX, quitY, quitWidth, quitHeight );
-  noFill(); 
-  } else {
-    quitButtonText();
-    fill(white);
-  }
-  //
-}//End homeScreen
-//
 void backgroundWhiteScreen() {
   fill(white);
   noStroke();
@@ -60,4 +48,27 @@ void gridBackground() {
   //
   //square(500,100,500);
 }//End gridBackground
+void homeScreen() {
+  //println("Arrived at Home Screen" ); //Testing for Splash Screen Start Button
+  if ( mouseX>=quitX && mouseX<=quitX+quitWidth && mouseY>=quitY && mouseY<=quitY+quitHeight ) { //QuitButton Hoverover
+    fill(white);
+    noStroke();
+    rect(quitX, quitY, quitWidth, quitHeight);
+    strokeWeight(1);
+    noFill();
+    //
+    quitButtonImage();
+    noFill();
+  } else {
+    fill(white);
+    noStroke();
+    rect(quitX, quitY, quitWidth, quitHeight);
+    strokeWeight(1);
+    noFill();
+    //
+    quitButtonText();
+    noFill();
+  }
+}//End homeScreen
+//
 //End Home Screen Subprogram

@@ -7,7 +7,7 @@ Boolean nightMode=false;
 color purple=#FF00FF, resetDefaultInk=#FFFFFF, white=#FFFFFF, red=#FF0000, green=#00FF00;
 //
 void setup() {
-  //frameRate(7); //Checking if the screen bugs out by adding more white.
+  frameRate(90000); //Checking if the screen bugs out by adding more white.
   size(1200, 900);
   //fullScreen(); //displayWidth //displayHeight
   appWidth = width;
