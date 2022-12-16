@@ -22,9 +22,10 @@ void spaceBarText() {
 void quitButtonText() {
   strokeWeight(1);
   stroke(darkRed);
-  rect( quitX, quitY, quitWidth, quitHeight );
+  rect( quitX , quitY, quitWidth, quitHeight );
   //
-  fill(red); 
+  color ink = (nightMode) ? red : purple;
+  fill(ink); 
   textAlign(CENTER, CENTER); 
   int size = 80; //Change the number until it fits
   textFont(arial, size); 

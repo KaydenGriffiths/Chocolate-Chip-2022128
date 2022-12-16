@@ -25,8 +25,7 @@ void draw() {
   //Assginment #2: OS Level Mouse Click and Splash Screen
   if ( OS_on==true && splashScreenStart==false) splashScreen(); 
   if ( splashScreenStart==true ) { 
-    homeScreen(); 
-    homeScreenStart=true;
+    homeScreen();
   }
   //
 }//End draw
@@ -37,7 +36,6 @@ void keyPressed() {
     splashScreenStart = true;
     backgroundWhiteScreen();
     backgroundImage();
-    gridBackground();
   }
   //
   //Key Board Short Cuts 
@@ -48,7 +46,7 @@ void keyPressed() {
   if ( key=='Q' || key=='q' ) { 
     exit();  
     print("bye!");
-  }
+  } 
   if ( key=='N' || key=='n' ) {
     if ( nightMode ) { 
       nightMode=false;
@@ -63,8 +61,9 @@ void keyPressed() {
 void mousePressed() {
   //OS Level Mouse Click
   if ( OS_on==false ) OS_on=true;//End OS Level Mouse Click
-  if ( homeScreenStart==true && mouseX>=quitX && mouseX<=quitX+quitWidth && mouseY>=quitY && mouseY<=quitY+quitHeight) {
+  if ( splashScreenStart==true && mouseX>=quitX && mouseX<=quitX+quitWidth && mouseY>=quitY && mouseY<=quitY+quitHeight) {
     exit();
+    println("Bye!");
   }
   //cursor();
 }//End mousePressed

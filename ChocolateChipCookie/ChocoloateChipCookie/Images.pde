@@ -5,6 +5,14 @@ void imagePopulation() {
   soggyCat = loadImage ("../Github/Chocolate-Chip-2022128/Images/Soggy-Cat.jpg");
 }//End imagePopulation
 //
+void imageNightMode() { 
+  if ( nightMode==false ) { 
+    tint( dayModeTint, dayModeOpacity);
+  } else {
+    tint(tintRed, tintGreen, tintBlue, tintNightModeOpacity);
+  }
+}//End imageNightMode
+//
 void quitButtonImage() {
   quitButtonImage = soggyCat;
   rect( quitButtonImageX, quitButtonImageY, quitButtonImageWidth, quitButtonImageHeight);
@@ -25,6 +33,7 @@ void quitButtonImage() {
     //
     float centerX=appWidth/2;
     quitButtonImageRectX = centerX - quitButtonImageWidthAdjusted/2;
+    imageNightMode();
     image( quitButtonImage, quitButtonImageRectX, quitButtonImageRectY, quitButtonImageWidthAdjusted, quitButtonImageHeightCalculated);
     //
   } else { //Portrait
@@ -37,6 +46,7 @@ void quitButtonImage() {
     //
     float centerX=appWidth/2;
     quitButtonImageRectX = centerX - quitButtonImageWidthCalculated/2;
+    //imageNightMode();
     image(  quitButtonImage, quitButtonImageRectX, quitButtonImageRectY, quitButtonImageWidthCalculated, quitButtonImageHeightAdjusted);
     //
   }
@@ -44,5 +54,27 @@ void quitButtonImage() {
   //Image( quitButtonImage, quitButtonImageRectX, quitButtonImageRectY, quitButtonImageRectWidth, quitButtonImageRectHeight);
   //
 }//End quitButtonImage
+//
+void quitButtonHoverOver() {
+  if ( mouseX>=quitX && mouseX<=quitX+quitWidth && mouseY>=quitY && mouseY<=quitY+quitHeight ) { //QuitButton Hoverover
+    fill(white);
+    noStroke();
+    rect(quitX, quitY, quitWidth, quitHeight);
+    quitButtonImage();
+    strokeWeight(1);
+    noFill();
+    //
+    noFill();
+  } else {
+    fill(white);
+    noStroke();
+    rect(quitX, quitY, quitWidth, quitHeight);
+    strokeWeight(1);
+    noFill();
+    //
+    quitButtonText();
+    noFill();
+  }
+}//End quitButtonHoverOver
 //
 //End images Subprogram

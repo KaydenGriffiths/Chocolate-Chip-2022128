@@ -8,11 +8,11 @@ int tintRed=64, tintGreen=64, tintBlue=40, tintNightModeOpacity=85;
 /* Home Screen Expectations 
  - Background image using tint()                                 -DONE
  - 9 evenly spaced rectangles, Assignment #3                     -DONE
- - Quit Button and Reset BUtton (Splash Screen Start Button)
+ - Quit Button and Reset BUtton (Splash Screen Start Button)     -QUIT Button DONE, Waiting on RESET Button
  - In each: image, text, 2D shape, Button
  - Narrative trhough the 9 rectangles
  - See Case Study
- - Note: must have one image with aspect ratio < -  you suck at this 
+ - Note: must have one image with aspect ratio                   -DONE (in class lesson)
  */
 void backgroundWhiteScreen() {
   fill(white);
@@ -21,13 +21,6 @@ void backgroundWhiteScreen() {
   strokeWeight(1); //Reset: 1 pixel
   fill(white); //Reset: white
 }//End backgroundWhiteScreen
-//
-void backgroundImage() {
-  //backgroundWhiteScreen();
-  if ( nightMode==false )tint( dayModeTint, dayModeOpacity); //Day Mode, see ternary operator
-  if ( nightMode==true ) tint(tintRed, tintGreen, tintBlue, tintNightModeOpacity); //Night Mode, see ternary operator
-  image( backGroundImage, backgroundX, backgroundY, backgroundWidth, backgroundHeight );
-}//end backgroundImage
 //
 void gridBackground() {
   strokeWeight(5);
@@ -45,30 +38,32 @@ void gridBackground() {
   strokeWeight(5);
   stroke(green);
   line( appWidth*0, appHeight/3, appWidth, appHeight/3);
-  //
-  //square(500,100,500);
 }//End gridBackground
+//
+void rectangleGrid() {
+  rect(appWidth*0, appHeight*0, appWidth/3, appHeight/3);
+  rect(appWidth*0, appHeight/3, appWidth/3, appHeight/3);
+  rect(appWidth*0, appHeight*2/3, appWidth/3, appHeight/3);
+  //
+  rect(appWidth/3, appHeight*0, appWidth/3, appHeight/3);
+  rect(appWidth/3, appHeight/3, appWidth/3, appHeight/3);
+  rect(appWidth/3, appHeight*2/3, appWidth/3, appHeight/3);
+  //
+  rect(appWidth*2/3, appHeight*0, appWidth/3, appHeight/3);
+  rect(appWidth*2/3, appHeight/3, appWidth/3, appHeight/3);
+  rect(appWidth*2/3, appHeight*2/3, appWidth/3, appHeight/3);
+}//End rectangleGrid
+//
+void backgroundImage() {
+  //backgroundWhiteScreen();
+  imageNightMode();
+  image( backGroundImage, backgroundX, backgroundY, backgroundWidth, backgroundHeight );
+  rectangleGrid();
+  gridBackground();
+}//end backgroundImage
+//
 void homeScreen() {
-  //println("Arrived at Home Screen" ); //Testing for Splash Screen Start Button
-  if ( mouseX>=quitX && mouseX<=quitX+quitWidth && mouseY>=quitY && mouseY<=quitY+quitHeight ) { //QuitButton Hoverover
-    fill(white);
-    noStroke();
-    rect(quitX, quitY, quitWidth, quitHeight);
-    strokeWeight(1);
-    noFill();
-    //
-    quitButtonImage();
-    noFill();
-  } else {
-    fill(white);
-    noStroke();
-    rect(quitX, quitY, quitWidth, quitHeight);
-    strokeWeight(1);
-    noFill();
-    //
-    quitButtonText();
-    noFill();
-  }
+  quitButtonHoverOver();
 }//End homeScreen
 //
 //End Home Screen Subprogram
