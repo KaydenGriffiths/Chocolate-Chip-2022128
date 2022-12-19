@@ -15,7 +15,7 @@ void imageNightMode() {
 //
 void quitButtonImage() {
   quitButtonImage = soggyCat;
-  rect( quitButtonImageX, quitButtonImageY, quitButtonImageWidth, quitButtonImageHeight);
+  //rect( quitButtonImageX, quitButtonImageY, quitButtonImageWidth, quitButtonImageHeight);
   //Aspect Ratio
   float  quitButtonImageWidth=100, quitButtonImageHeight=125;
   float quitButtonImageWidthAdjusted=0.0, quitButtonImageHeightAdjusted=0.0;
@@ -61,20 +61,46 @@ void quitButtonHoverOver() {
     noStroke();
     rect(quitX, quitY, quitWidth, quitHeight);
     quitButtonImage();
-    strokeWeight(1);
-    noFill();
-    //
     noFill();
   } else {
     fill(white);
     noStroke();
     rect(quitX, quitY, quitWidth, quitHeight);
-    strokeWeight(1);
-    noFill();
-    //
     quitButtonText();
     noFill();
   }
 }//End quitButtonHoverOver
+//
+void startButtonHoverOver() {
+  if ( mouseX>=startButtonX && mouseX<=startButtonX+startButtonWidth && mouseY>=startButtonY && mouseY<=startButtonY+startButtonHeight ) {
+    fill(white);
+    noStroke();
+    rect( startButtonX, startButtonY, startButtonWidth, startButtonHeight );
+    startButtonText();
+    noFill();
+  } else {
+    fill(white);
+    noStroke();
+    rect(startButtonX, startButtonY, startButtonWidth, startButtonHeight);
+    startButtonText();
+    noFill();
+  }
+}//End startButtonHoverOver
+//
+void resetButtonHoverOver() { //resetButton
+  if (mouseX>=resetButtonX && mouseX<=resetButtonX+resetButtonWidth && mouseY>=resetButtonY && mouseY<=resetButtonY+resetButtonHeight ) {
+    fill(white);
+    noStroke();
+    rect( resetButtonX, resetButtonY, resetButtonWidth, resetButtonHeight );
+    resetButtonText();
+    noFill();
+  } else {
+    fill(white);
+    noStroke();
+    rect( resetButtonX, resetButtonY, resetButtonWidth, resetButtonHeight);
+    resetButtonText();
+    noFill();
+  }
+}//End resetButtonHoverOver
 //
 //End images Subprogram

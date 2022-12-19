@@ -1,6 +1,6 @@
 //Global Variables
 int appWidth, appHeight, smallerDimension, largerDimension;
-Boolean OS_on=false, splashScreenStart=false, homeScreenStart=false;
+Boolean OS_on=false, splashScreenStart=false, homeScreenStart=false, StartStory=false;
 //
 //Colored Variables:
 Boolean nightMode=false;
@@ -22,6 +22,8 @@ void setup() {
 }//End setup
 //
 void draw() {
+  imageNightMode();
+  cursorDrawnIn();
   //Assginment #2: OS Level Mouse Click and Splash Screen
   if ( OS_on==true && splashScreenStart==false) splashScreen(); 
   if ( splashScreenStart==true ) { 

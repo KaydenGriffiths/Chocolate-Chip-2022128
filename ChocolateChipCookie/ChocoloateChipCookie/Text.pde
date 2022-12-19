@@ -1,5 +1,7 @@
 PFont arial;
 color darkRed=#DD0000;
+color ink = (nightMode) ? red : purple;
+int size = 80; //Change the number until it fits
 //
 void textSetup() {
   //Assignment #2: Minimum Expectation = one font
@@ -20,18 +22,31 @@ void spaceBarText() {
 }//End spaceBarText
 //
 void quitButtonText() {
-  strokeWeight(1);
-  stroke(darkRed);
-  rect( quitX , quitY, quitWidth, quitHeight );
+  //rect( quitX , quitY, quitWidth, quitHeight );
   //
-  color ink = (nightMode) ? red : purple;
   fill(ink); 
   textAlign(CENTER, CENTER); 
-  int size = 80; //Change the number until it fits
   textFont(arial, size); 
   String quitButton="QUIT"; 
   text( quitButton, quitX, quitY, quitWidth, quitHeight );
   noFill();
 }//End spaceBarText
 //
+void startButtonText() {
+  fill(ink);
+  textAlign(CENTER, CENTER);
+  textFont(arial, size);
+  String startButton="START";
+  text( startButton, startButtonX, startButtonY, startButtonWidth, startButtonHeight );
+  noFill();
+}//End startButtonText
+//
+void resetButtonText() {
+  fill(ink);
+  textAlign(CENTER,CENTER);
+  textFont(arial, size);
+  String resetButton="RESET";
+  text( resetButton, resetButtonX, resetButtonY, resetButtonWidth, resetButtonHeight );
+  noFill();
+}//End resetButtonText
 //End Text Subprogram

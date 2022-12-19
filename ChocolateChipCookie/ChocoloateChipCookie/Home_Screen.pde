@@ -1,9 +1,11 @@
 int backgroundX, backgroundY, backgroundWidth, backgroundHeight;
-float quitX, quitY, quitWidth, quitHeight;
 float quitButtonImageX, quitButtonImageY, quitButtonImageWidth, quitButtonImageHeight;
 float quitButtonImageRectX, quitButtonImageRectY, quitButtonImageRectWidth, quitButtonImageRectHeight;
 int dayModeTint=255, dayModeOpacity=50;
 int tintRed=64, tintGreen=64, tintBlue=40, tintNightModeOpacity=85;
+float startButtonX, startButtonY, startButtonWidth, startButtonHeight;
+float resetButtonWidth, resetButtonHeight, resetButtonX, resetButtonY;
+float quitX, quitY, quitWidth, quitHeight;
 //
 /* Home Screen Expectations 
  - Background image using tint()                                 -DONE
@@ -56,14 +58,15 @@ void rectangleGrid() {
 //
 void backgroundImage() {
   //backgroundWhiteScreen();
-  imageNightMode();
   image( backGroundImage, backgroundX, backgroundY, backgroundWidth, backgroundHeight );
-  rectangleGrid();
+  //rectangleGrid();
   gridBackground();
 }//end backgroundImage
 //
 void homeScreen() {
   quitButtonHoverOver();
+  startButtonHoverOver();
+  resetButtonHoverOver();
 }//End homeScreen
 //
 //End Home Screen Subprogram
