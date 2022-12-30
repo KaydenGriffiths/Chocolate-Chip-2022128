@@ -49,4 +49,5 @@ void resetButtonText() {
   text( resetButton, resetButtonX, resetButtonY, resetButtonWidth, resetButtonHeight );
   noFill();
 }//End resetButtonText
+//
 //End Text Subprogram

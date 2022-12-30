@@ -4,7 +4,7 @@ Boolean OS_on=false, splashScreenStart=false, homeScreenStart=false, StartStory=
 //
 //Colored Variables:
 Boolean nightMode=false;
-color purple=#FF00FF, resetDefaultInk=#FFFFFF, white=#FFFFFF, red=#FF0000, green=#00FF00;
+color purple=#FF00FF, resetDefaultInk=#FFFFFF, white=#FFFFFF, red=#FF0000, green=#00FF00, black=#000000;
 //
 void setup() {
   frameRate(90000); //Checking if the screen bugs out by adding more white.
@@ -37,7 +37,9 @@ void keyPressed() {
   if ( OS_on==true && key==' ' ) { 
     splashScreenStart = true;
     backgroundWhiteScreen();
-    backgroundImage();
+    gridBackground();
+    StartStory=true;
+    //backgroundImage();
   }
   //
   //Key Board Short Cuts 
@@ -52,10 +54,14 @@ void keyPressed() {
   if ( key=='N' || key=='n' ) {
     if ( nightMode ) { 
       nightMode=false;
-      backgroundImage();
+      //backgroundImage();
+      backgroundWhiteScreen();
+      gridBackground();
     } else { 
       nightMode=true;
-      backgroundImage();
+      //backgroundImage();
+      backgroundWhiteScreen();
+      gridBackground();
     }
   }
 }//End keyPressed
@@ -67,7 +73,13 @@ void mousePressed() {
     exit();
     println("Bye!");
   }
-  //cursor();
+  if ( splashScreenStart==true &&mouseX>=startButtonX && mouseX<=startButtonX+startButtonWidth && mouseY>=startButtonY && mouseY<=startButtonY+startButtonHeight ) { //Starting the program for real
+    storyTime();
+  }
+  if ( splashScreenStart==true && mouseX>=resetButtonX && mouseX<=resetButtonX+resetButtonWidth && mouseY>=resetButtonY && mouseY<=resetButtonY+resetButtonHeight) {
+    backgroundWhiteScreen();
+    gridBackground();
+  }
 }//End mousePressed
 //
 //End MAIN Program
